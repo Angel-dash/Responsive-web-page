@@ -216,7 +216,14 @@ svg {
 .padding-block-700 {
   padding-block: var(--size-700);
 }
-
+.display-sm-none{
+  display: none;
+}
+@media (min-width:50em){
+  .display-md-inline-flex{
+    display: inline-flex;
+  }
+}
 .container {
   --max-width: 1110px;
   --padding: 1rem;
@@ -279,7 +286,7 @@ body {
 
 /*navigation*/
 .primary-header{
-  margin-top:var(--size-700);
+  padding-top:var(--size-700);
   display: flex;
 }
 .nav-wrapper{
@@ -302,7 +309,14 @@ body {
     inset: 7rem var(--size-400) auto;
     background: var(--clr-neutral-100);
     border-radius: var(--size-100);
+    box-shadow: 0 0 0.5em rgb(0,0,0,0.05);
   }
+    .primary-header[data-overlay]{
+      content: "";
+      position:fixed;
+      inset:0;
+      background-image: linear-gradient(rgb(0 0 0 /0),rgb(0 0 0 /0.8));
+    }
   .nav-list{
     display: grid;
     gap:var(--size-600);
@@ -322,6 +336,9 @@ body {
   }
     .mobile-nav-toggle {
       display: block;
+      position: fixed;
+      top:var(--size-600);
+      right:var(--size-400);
       cursor: pointer;
       background: transparent;
       border: 0;
